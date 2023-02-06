@@ -1,0 +1,150 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --yellow-clr: #FAF783;
+  --green-clr: #7FBC53:
+  --black-clr: #707070;
+  --white-clr: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body, #app {
+  width: 100vw;
+  min-height: 100vh;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  cursor: pointer;
+}
+
+.f-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5rem;
+  place-items: center;
+}
+
+.left, .right {
+  position: relative;
+  top: -79%;
+  width: 100%;
+  background-color: var(--yellow-clr);
+  border-radius: 2rem;
+  padding: 3rem 1rem;
+  transition: .5s top ease;
+}
+
+.container.left-form .left {
+  top: 0;
+}
+
+.container:not(.left-form) .right {
+  top: 0;
+}
+
+.left {
+  border-bottom-right-radius: 0;
+}
+
+.right {
+  border-bottom-left-radius: 0;
+}
+
+.content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.content, .left__form, .right__form, .left__form-fields, .right__form-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.content.left {
+  align-items: flex-start;
+}
+
+.content.right {
+  align-items: flex-start;
+}
+
+.content > h1 {
+  font-size: 6.4rem;
+  color: #7FBC53;
+}
+
+.left__form, .right__form {
+  width: 100%;
+}
+
+.left__form-fields, .right__form-fields {
+  margin: 6.4rem 0;
+  width: 100%;
+}
+
+.left__form-fields > input[type="email"], .right__form-fields > input[type="email"] {
+  margin: 3.6rem 0;
+}
+
+.left__form-fields > *, .right__form-fields > * {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  border-bottom: .2rem solid #707070;
+  width: 100%;
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.left__form-btn > button , .right__form-btn > button {
+  border: none;
+  color: var(--white-clr);
+  background-color: #7FBC53;
+  padding: 1rem 1.5rem;
+  font-size: 3.6rem;
+  border-radius: 2rem;
+}
+
+.left__arrow, .right__arrow {
+  position: absolute;
+  top: 105%;
+  display: flex;
+  background-color: #FAF783;
+  color: #7FBC53;
+  padding: 1rem 1.5rem;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  cursor: pointer;
+}
+
+.left__arrow > i, .right__arrow > i {
+  font-size: 6.4rem;
+}
+
+.left__arrow {
+  left: 100%;
+  transform: translate(-100%, -50%);
+}
+
+.right__arrow {
+  left: 0;
+  transform: translate(0%, -50%);
+}
